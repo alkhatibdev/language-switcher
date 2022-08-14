@@ -1,0 +1,47 @@
+{
+    "name": "alkhatibdev/language-switcher",
+    "description": "Laravel dynamic language switcher for web and api routes",
+    "homepage": "https://github.com/alkhatibdev/language-switcher",
+    "keywords": [
+        "language", "language switcher",
+        "locale", "switcher", "change locale",
+        "localization",
+        "laravel"
+    ],
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AlkhatibHamad",
+            "email": "me@alkhatib.dev",
+            "homepage": "https://github.com/alkhatibdev",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "AlkhatibDev\\LanguageSwitcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AlkhatibDev\\LanguageSwitcher\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlkhatibDev\\LanguageSwitcher\\Providers\\LanguageSwitcherServiceProvider"
+            ],
+            "aliases": {
+                "Switcher": "AlkhatibDev\\LanguageSwitcher\\Switcher"
+            }
+
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.x-dev",
+        "orchestra/testbench": "7.x-dev"
+    }
+}
