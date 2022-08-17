@@ -1,4 +1,4 @@
-<p align="center"><img src="/socialcard.png" alt="Social Card of Language Switcher Package"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/alkhatibdev/language-switcher/main/socialcard.png" alt="Social Card of Language Switcher Package"></p>
 
 # Laravel dynamic language switcher
 
@@ -13,6 +13,7 @@ Laravel dynamic language switcher for both web and API routes with various suppo
 - Switch user locale automatically and remind newly selected language for all next requests.
 - Support language switching via `request body/query keys`, `request headers keys` and `route parameters names`.
 - Support API routes (Switch language via headers for stateless requests).
+- Support all HTTP methods (GET, POST, PUT and ..etc).
 - SEO-friendly routes by supporting language switching depending on route parameters.
 - Everything is a configurable with a rich and well-documented [configuration file](https://github.com/alkhatibdev/language-switcher/blob/main/config/language-switcher.php).
 
@@ -30,30 +31,36 @@ php artisan vendor:publish --tag=language-switcher-config
 ```
 A `language-switcher.php` config file will be published on your `configs` directory. Feel free to read and override all these configurable parts, or stick with the [defaults configs](https://github.com/alkhatibdev/language-switcher/blob/main/config/language-switcher.php)
 
+<br>
 
 # Usage
 
 ## Basic Usage
 Everything is set out of the box, start calling your routes with this supported options:
 
-### Via Request query keys
-```
+### Via Request query/body keys
+```php
+// Request query key/value
 http://example.com/?lang=en
-```
-Or with request magic keys
-```
+
+// Request magic keys
 http://example.com/?en
+
+// Also you can use the same above parameters with the body of POST or PUT
+curl -X POST http://example.com/api/users
+     -d '{"lang": "en"}'  
 ```
 
+
 ### Via request headers keys
-```shell
-curl --header "Accept-Language: en" http://example.com
+```php
+curl --header "Accept-Language: en" http://example.com/api/users
 ```
 
 ### Via route parameters 
 For given route: `Route::get('/{locale}/home', [HomeController, 'home']);`
 
-```
+```php
 http://example.com/en/home
 ```
 
@@ -63,7 +70,7 @@ http://example.com/en/home
 > <br>- All previous examples will ask the package to switch locale to `'en'`.
 > <br>- Upcoming requests still remind this newly set locale.
 
-#
+<br>
 
 ## Customize Package Scope
 
@@ -117,6 +124,8 @@ By default, the package uses sessions to store the current locale, switched by a
 
 'enable_session' => false,
 ```
+
+<br>
 
 # License
 
