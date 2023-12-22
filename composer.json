@@ -12,7 +12,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "AlkhatibHamad",
+            "name": "Alkhatib Hamad",
             "email": "me@alkhatib.dev",
             "homepage": "https://github.com/alkhatibdev",
             "role": "Developer"
@@ -28,6 +28,11 @@
         "psr-4": {
             "AlkhatibDev\\LanguageSwitcher\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": [
+            "./vendor/bin/phpunit"
+        ]
     },
     "extra": {
         "laravel": {
