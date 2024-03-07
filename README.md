@@ -3,6 +3,7 @@
 # Laravel dynamic language switcher
 
 [![Latest Version](https://img.shields.io/github/release/alkhatibdev/language-switcher.svg?style=flat-square)](https://github.com/alkhatibdev/language-switcher/releases)
+![Packagist Downloads (custom server)](https://img.shields.io/packagist/dt/alkhatibdev/language-switcher)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 # Introduction
@@ -11,22 +12,22 @@ Laravel dynamic language switcher for both web and API routes with various suppo
 ## Features
 
 - Switch user locale automatically and remind newly selected language for all next requests.
-- Support language switching via `request body/query keys`, `request headers keys` and `route parameters names`.
+- Support language switching via `request body/query keys`, `request headers keys`, and `route parameters names`.
 - Support API routes (Switch language via headers for stateless requests).
 - Support all HTTP methods (GET, POST, PUT and ..etc).
 - SEO-friendly routes by supporting language switching depending on route parameters.
-- Everything is a configurable with a rich and well-documented [configuration file](https://github.com/alkhatibdev/language-switcher/blob/main/config/language-switcher.php).
+- Everything is configurable with a rich and well-documented [configuration file](https://github.com/alkhatibdev/language-switcher/blob/main/config/language-switcher.php).
 
 # Installation
 
 ## install via composer
 
-```shell
+```bash
 composer require alkhatibdev/language-switcher
 ```
 
 ## Publish Configs 
-```shell
+```bash
 php artisan vendor:publish --tag=language-switcher-config
 ```
 A `language-switcher.php` config file will be published on your `configs` directory. Feel free to read and override all these configurable parts, or stick with the [defaults configs](https://github.com/alkhatibdev/language-switcher/blob/main/config/language-switcher.php)
@@ -36,10 +37,10 @@ A `language-switcher.php` config file will be published on your `configs` direct
 # Usage
 
 ## Basic Usage
-Everything is set out of the box, start calling your routes with this supported options:
+Everything is set out of the box, start calling your routes with these supported options:
 
 ### Via Request query/body keys
-```php
+```bash
 // Request query key/value
 http://example.com/?lang=en
 
@@ -53,14 +54,14 @@ curl -X POST http://example.com/api/users
 
 
 ### Via request headers keys
-```php
+```bash
 curl --header "Accept-Language: en" http://example.com/api/users
 ```
 
 ### Via route parameters 
 For given route: `Route::get('/{locale}/home', [HomeController, 'home']);`
 
-```php
+```
 http://example.com/en/home
 ```
 
