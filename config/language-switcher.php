@@ -7,7 +7,7 @@ return [
     | Enable/disable Package
     |--------------------------------------------------------------------------
     |
-    | Set to false if you want to effectively disable language switching at all.
+    | Set to false if you want to disable language switching at all effectively.
     | Assigned middleware may still load, but will not do anything and skip its work.
     |
      */
@@ -19,7 +19,7 @@ return [
     | Middleware Alias
     |--------------------------------------------------------------------------
     |
-    | The middleware alias will be registered when application is started.
+    | The middleware alias will be registered when the application is started.
     | You can assign package middleware to your routes by this alias. However,
     | feel free to rename it as you wish.
     |
@@ -36,12 +36,12 @@ return [
     |--------------------------------------------------------------------------
     |
     | Set to true if you want to effectively enable language switching to all routes.
-    | However, when it set to false the language switching will work only on routes that
+    | However, when it is set to false the language switching will work only on routes that
     | assign a middleware alias.
     |
      */
 
-    'assign_globally' => false,
+    'assign_globally' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -85,7 +85,7 @@ return [
     |       Enable/Disable switching language via request headers keys.
     |
     |   *supported_keys*:
-    |       The array of supported keys will be considered to switch locale
+    |       The array of supported keys will be considered to switch the locale
     |       when they passed with request headers.
     |
     |   Example:
@@ -108,7 +108,7 @@ return [
     |       Enable/Disable switching language via request body/query keys.
     |
     |   *supported_keys*:
-    |       The array of supported keys will be considered to switch locale
+    |       The array of supported keys will be considered to switch the locale
     |       when they passed with request body/query.
     |
     |   *enable_magic_keys*:
@@ -118,13 +118,13 @@ return [
     |   *magic_keys_prefix*:
     |       The magic keys prefix will be concatenated with each of the allowed locales to give a special name.
     |       You can set to '_', '-' or '@'. default value is ''.
-    |       Note: Only request query params supported characters is allowed.
+    |       Note: Only request query params supported characters are allowed.
     |
     |   Examples:
     |       - example.com/?lang=en                      // with supported keys
     |       - example.com/?en                           // with magic keys
     |       - example.com/?_en                          // with magic keys and prefix
-    |       All examples above will ask package to switch locale to 'en'
+    |       All examples above will ask the package to switch locale to 'en'
      */
 
     'requests' => [
@@ -144,7 +144,7 @@ return [
     | useful for SEO.
     |
     |   *enable*:
-    |       Enable/Disable switching language via routes parameters.
+    |       Enable/Disable switching language via route parameters.
     |
     |   *supported_parameters*:
     |       The array of supported parameter names will be considered to switch
@@ -165,12 +165,12 @@ return [
     | Session
     |--------------------------------------------------------------------------
     |
-    | The package may uses sessions to store the current locale, switched by a user,
+    | The package may use sessions to store the current locale, switched by a user,
     | to keep the newly selected locale active for the next requests without a need to pass
     | the locale in every request.
     |
     |   *enable_session*:
-    |       Enable/Disable storing current switched user locale.
+    |       Enable/Disable storing the current switched user locale.
     |
     |   *session_key*:
     |       Session key used to store current locale. Feel free to change its value
